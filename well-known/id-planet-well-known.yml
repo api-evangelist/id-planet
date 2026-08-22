@@ -1,0 +1,109 @@
+generated: '2026-08-22'
+method: probed
+source: >-
+  Direct unauthenticated HTTPS probes of every host ID Planet controls or links from its own
+  site: idplanet.io (marketing site + WordPress), idplanet.gitbook.io (documentation), and
+  coolgods.io (first-party game site linked from the homepage).
+name: ID Planet .well-known Probe
+description: >-
+  No .well-known document is served on any ID Planet host. On idplanet.io every probed path
+  returns a hard HTTP 404 carrying the WordPress "Page not found" template. idplanet.gitbook.io
+  and coolgods.io both answer HTTP 200 for EVERY path, including a guaranteed-nonexistent
+  control path, with byte-identical bodies -- GitBook's client-rendered SPA shell (9,219 bytes)
+  and a domain-parking redirect stub (114 bytes) respectively. Neither is a document. NO
+  WellKnown and NO SecurityTxt pointer is emitted for this provider: there is not a single hit.
+hit_count: 0
+soft_404_controls:
+  - host: idplanet.gitbook.io
+    url: https://idplanet.gitbook.io/definitely-not-a-real-page-xyz-20260822/
+    status: 200
+    content_type: text/html
+    bytes: 9219
+    note: >-
+      Control probe. Any 200 on idplanet.gitbook.io with this byte count is the GitBook SPA
+      catch-all shell, not a document.
+  - host: coolgods.io
+    url: https://coolgods.io/definitely-not-a-real-page-xyz-20260822/
+    status: 200
+    content_type: text/html
+    bytes: 114
+    note: >-
+      Control probe. coolgods.io serves a 114-byte JavaScript redirect to /lander for every
+      path -- the domain is parked, not hosting the CoolGods game site the ID Planet homepage
+      advertises.
+
+hosts:
+  - host: https://idplanet.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+  - host: https://idplanet.gitbook.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        note: SPA catch-all shell, byte-identical to the control probe. Not a document.
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        note: SPA catch-all shell, byte-identical to the control probe. Not a document.
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        note: SPA catch-all shell, byte-identical to the control probe. Not a document.
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: null
+        note: SPA catch-all shell, byte-identical to the control probe. Not a document.
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        note: SPA catch-all shell, byte-identical to the control probe. Not a document.
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        note: SPA catch-all shell, byte-identical to the control probe. Not a document.
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        note: SPA catch-all shell, byte-identical to the control probe. Not an AgentCard.
+      - path: /.well-known/agent.json
+        status: 200
+        file: null
+        note: SPA catch-all shell, byte-identical to the control probe. Not an AgentCard.
+  - host: https://coolgods.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        note: Parked-domain redirect stub, byte-identical to the control probe. Not a document.
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        note: Parked-domain redirect stub, byte-identical to the control probe. Not an AgentCard.
+      - path: /.well-known/agent.json
+        status: 200
+        file: null
+        note: Parked-domain redirect stub, byte-identical to the control probe. Not an AgentCard.

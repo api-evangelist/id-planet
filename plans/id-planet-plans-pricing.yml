@@ -1,0 +1,24 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  https://idplanet.io/ and every linked page (about, portfolio, contact, blog), plus the
+  GitBook whitepaper spaces https://idplanet.gitbook.io/whitepaper and
+  https://idplanet.gitbook.io/info. Every page returned HTTP 200 and none carries a pricing,
+  plans, tiers or API-billing surface.
+name: ID Planet Plans and Pricing
+plan_count: 0
+plans: []
+note: >-
+  ID Planet publishes no plans, tiers or pricing of any kind. The company sells no API and no
+  subscription product; its only published commercial surface is the $ID token, a BEP20 asset on
+  BNB Chain with a 7,800,000,000 total supply distributed through a mining-machine and staking
+  model (pre-mining reserved at 1 ID = 0.10 USDT for 2,000 nodes). Token economics are not API
+  plans and are deliberately NOT recorded here as such. There is no free tier, no paid tier, no
+  enterprise contact-sales form, and no rate-limited quota to price.
+evidence:
+  - url: https://idplanet.io/
+    status: 200
+  - url: https://idplanet.gitbook.io/whitepaper/id-planet-economy/id-planet-tokenomics.md
+    status: 200
+  - url: https://idplanet.io/pricing/
+    status: 404

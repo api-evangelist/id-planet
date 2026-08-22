@@ -1,17 +1,35 @@
 aid: id-planet
 name: ID Planet
-description: 'ID Planet is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  ID Planet is a Web3 GameFi company building an EVM-compatible blockchain ecosystem for
+  blockchain gaming. Its published ecosystem spans ID Planet Chain, the ID Explorer block
+  explorer, the ID Wallet multi-chain wallet, ID SWAP (a decentralized exchange), ID PLANETXC
+  (a centralized exchange) and an NFT marketplace, alongside first-party game titles Infinitar
+  (5v5 MOBA), Runesoul (ARPG) and CoolGods (MOBA). The $ID governance token is issued as a
+  BEP20 asset on BNB Chain with a total supply of 7,800,000,000 and a mining/burn distribution
+  model. Company material is published as a GitBook whitepaper in eight languages. As of
+  2026-08-22 ID Planet publishes no developer portal, API reference, RPC endpoint, chain ID or
+  machine-readable specification on any host it controls, so this profile is identity and
+  documentation only.
+image: https://idplanet.io/wp-content/uploads/2025/03/cropped-20250328_225855_0000-192x192.png
 url: https://raw.githubusercontent.com/api-evangelist/id-planet/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment
 specificationVersion: '0.20'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Web3
+- Blockchain
+- Gaming
+- GameFi
+- Cryptocurrency
+- NFT
+- Digital Wallet
+- Cryptocurrency Exchange
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,56 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/id-planet-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/id-planet_stock/
+  url: https://idplanet.io/
+- type: Documentation
+  url: https://idplanet.gitbook.io/whitepaper
+- type: Blog
+  url: https://idplanet.io/blog/
+- type: Support
+  url: https://idplanet.io/contact/
+- type: PrivacyPolicy
+  url: https://idplanet.io/privacy-policy/
+- type: LLMsTxt
+  url: llms/id-planet-llms.txt
+- type: Plans
+  url: plans/id-planet-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/id-planet-rate-limits.yml
+- type: Twitter
+  url: https://x.com/idplanet_world
+- type: Telegram
+  url: https://t.me/idplanet
+- type: YouTube
+  url: https://youtube.com/@idplanet
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    ID Planet's GitBook whitepaper advertises an EVM-compatible "ID Planet Chain", an "ID
+    Explorer" block explorer and asset APIs "easily accessible to third-party developers", but
+    names no RPC URL, chain ID, explorer host, SDK or specification anywhere across its sixteen
+    published pages, and idplanet.io returns a hard 404 for /llms.txt, /openapi.json and every
+    /.well-known/ path -- the only machine-readable document on any ID Planet host is the
+    llms.txt GitBook emits automatically for the whitepaper space.
+  evidence:
+    - url: https://idplanet.gitbook.io/whitepaper/id-planet-ecosystem/id-planet-chain.md
+      status: 200
+    - url: https://idplanet.gitbook.io/whitepaper/llms.txt
+      status: 200
+    - url: https://idplanet.io/openapi.json
+      status: 404
+    - url: https://idplanet.io/.well-known/api-catalog
+      status: 404
+    - url: https://idplanet.io/.well-known/agent-card.json
+      status: 404
+    - url: https://idplanet.io/llms.txt
+      status: 404
+  checked: '2026-08-22'

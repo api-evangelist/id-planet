@@ -1,0 +1,23 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  https://idplanet.gitbook.io/whitepaper (all 16 pages indexed by the space llms.txt) and
+  https://idplanet.io/ and its linked pages. No developer documentation, API reference, RPC
+  endpoint or quota policy is published on any ID Planet host.
+name: ID Planet Rate Limits
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  ID Planet documents no rate limits because it publishes no API. The whitepaper describes an
+  EVM-compatible "ID Planet Chain" and states that "all art assets and ID Planet genetic data
+  are easily accessible to third-party developers", but no RPC URL, chain ID, explorer host,
+  SDK or endpoint of any kind is named anywhere in the published material, so there is no
+  surface to which a limit could attach. An honest zero, not an unchecked field.
+evidence:
+  - url: https://idplanet.gitbook.io/whitepaper/id-planet-ecosystem/id-planet-chain.md
+    status: 200
+  - url: https://idplanet.gitbook.io/whitepaper/llms.txt
+    status: 200
+  - url: https://idplanet.io/llms.txt
+    status: 404
