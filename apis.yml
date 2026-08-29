@@ -11,6 +11,17 @@ description: >-
   2026-08-22 ID Planet publishes no developer portal, API reference, RPC endpoint, chain ID or
   machine-readable specification on any host it controls, so this profile is identity and
   documentation only.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://idplanet.io/wp-content/uploads/2025/03/cropped-20250328_225855_0000-192x192.png
 url: https://raw.githubusercontent.com/api-evangelist/id-planet/refs/heads/main/apis.yml
 x-type: company
